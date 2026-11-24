@@ -1,0 +1,72 @@
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f9f1e4;
+    font-family: Georgia, serif;
+    color: #4f3426;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.subtitle, .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #947248;
+}
+
+.cookie {
+    font-size: 110px;
+    margin: 25px 0;
+}
+
+.fortune-card {
+    background: #fffcf7;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px #00000010;
+}
+
+#fortune-text {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+button {
+    background: #986333;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #754921;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#status {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}

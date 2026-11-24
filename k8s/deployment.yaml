@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bully-app
+
+spec:
+  replicas: 3
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app: bully-app
+
+  template:
+    metadata:
+      labels:
+        app: bully-app
+
+    spec:
+      containers:
+        - name: bully-container
+          image: bully-app:latest
+          imagePullPolicy: Never
+
+          env:
+            - name: WEB_PORT
+              value: "8080"
+
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+
+          ports:
+            - containerPort: 8080
+              name: http
+
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 1
+            timeoutSeconds: 1
+            failureThreshold: 1
+            successThreshold: 1
